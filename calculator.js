@@ -1,2 +1,3 @@
 ["add", "+", "return"]
 ["subtract", "-"]
+["multiply", "*"]
