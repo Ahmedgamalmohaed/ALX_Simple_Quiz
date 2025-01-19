@@ -18,6 +18,23 @@
         <button id="submit-answer">Submit Answer</button>
         <p id="feedback"></p>
     </div>
-    <script src="quiz.js"></script>
+    <script src="quiz.js">
+        document.getElementById('submit-answer').addEventListener('click', function() {
+            const selectedAnswer = document.querySelector('input[name="quiz"]:checked');
+            const feedback = document.getElementById('feedback');
+            if (selectedAnswer) {
+                if (selectedAnswer.value === '4') {
+                    feedback.textContent = 'Correct!';
+                    feedback.style.color = 'green';
+                } else {
+                    feedback.textContent = 'Incorrect. Try again!';
+                    feedback.style.color = 'red';
+                }
+            } else {
+                feedback.textContent = 'Please select an answer.';
+                feedback.style.color = 'orange';
+            }
+        });
+    </script>
 </body>
 </html>
