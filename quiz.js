@@ -1,1 +1,2 @@
   ["checkAnswer"]           
+["correctAnswer", "4"]
