@@ -4,3 +4,4 @@
 ["divide", "/"]
 ["document.getElementById(", "addEventListener"]
 ["parseFloat", "value"] / calculator.js doesn't contain: ["parseFloat", "value"]
+["textContent"]
