@@ -1,1 +1,41 @@
-function, declare a variable named correctAnswer and assign it the string value "4". This represents the correct answer to your quiz question.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Quiz</title>
+</head>
+<body>
+    <div id="quiz-container">
+        <p id="quiz-question">What is 2 + 2?</p>
+        <div>
+            <input type="radio" id="choice1" name="quiz" value="4">
+            <label for="choice1">4</label><br>
+            <input type="radio" id="choice2" name="quiz" value="22">
+            <label for="choice2">22</label><br>
+            <input type="radio" id="choice3" name="quiz" value="3">
+            <label for="choice3">3</label>
+        </div>
+        <button id="submit-answer">Submit Answer</button>
+        <p id="feedback"></p>
+    </div>
+    <script>
+        document.getElementById('submit-answer').addEventListener('click', function() {
+            const selectedAnswer = document.querySelector('input[name="quiz"]:checked');
+            const userAnswer = selectedAnswer ? selectedAnswer.value : null;
+            const feedback = document.getElementById('feedback');
+            if (userAnswer) {
+                if (userAnswer === '4') {
+                    feedback.textContent = 'Correct!';
+                    feedback.style.color = 'green';
+                } else {
+                    feedback.textContent = 'Incorrect. Try again!';
+                    feedback.style.color = 'red';
+                }
+            } else {
+                feedback.textContent = 'Please select an answer.';
+                feedback.style.color = 'orange';
+            }
+        });
+    </script>
+</body>
+</html>
