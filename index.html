@@ -33,6 +33,25 @@
             } else {
                 feedback.textContent = 'Please select an answer.';
                 feedback.style.color = 'orange';
+                function getUserAnswer() {
+            const selectedAnswer = document.querySelector('input[name="quiz"]:checked');
+            return selectedAnswer ? selectedAnswer.value : null;
+        }
+
+        document.getElementById('submit-answer').addEventListener('click', function() {
+            const userAnswer = getUserAnswer();
+            const feedback = document.getElementById('feedback');
+            if (userAnswer) {
+                if (userAnswer === '4') {
+                    feedback.textContent = 'Correct!';
+                    feedback.style.color = 'green';
+                } else {
+                    feedback.textContent = 'Incorrect. Try again!';
+                    feedback.style.color = 'red';
+                }
+            } else {
+                feedback.textContent = 'Please select an answer.';
+                feedback.style.color = 'orange';
             }
         });
     </script>
